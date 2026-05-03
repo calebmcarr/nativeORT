@@ -1,4 +1,6 @@
 #include <Rcpp.h>
+
+#ifdef HAVE_ORT
 #include <onnxruntime_cxx_api.h>
 
 // [[Rcpp::export]]
@@ -101,3 +103,36 @@ std::vector<std::string> ort_session_output_names(SEXP session_ptr) {
   }
   return names;
 }
+
+#else
+
+SEXP ort_create_env() {
+  Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
+}
+
+SEXP ort_create_session(SEXP env_ptr,
+                        std::string model_path,
+                        std::string provider = "cpu",
+                        std::string cache_dir = "",
+                        int threads = 0,
+                        int opt_level=99) {
+  Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
+}
+
+SEXP ort_session_input_count(SEXP session_ptr) {
+  Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
+}
+
+SEXP ort_session_output_count(SEXP session_ptr) {
+  Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
+}
+
+std::vector<std::string> ort_session_input_names(SEXP session_ptr) {
+  Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
+}
+
+std::vector<std::string> ort_session_output_names(SEXP session_ptr) {
+  Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
+}
+
+#endif

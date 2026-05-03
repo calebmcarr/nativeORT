@@ -1,6 +1,8 @@
 #include <Rcpp.h>
-#include <onnxruntime_cxx_api.h>
 #include <vector>
+
+#ifdef HAVE_ORT
+#include <onnxruntime_cxx_api.h>
 
 // [[Rcpp::export]]
 Rcpp::NumericVector ort_run(
@@ -59,3 +61,19 @@ Rcpp::NumericVector ort_run(
 
   return result;
 }
+
+#else
+
+Rcpp::NumericVector ort_run(
+    SEXP session_ptr,
+    Rcpp::NumericVector input_array,
+    std::vector<int> input_shape,
+    std::string input_name,
+    std::string output_name
+) {
+  Rcpp::stop(
+    "ORT not installed. Run ort_install() then reinstall nativeORT."
+  );
+}
+
+#endif

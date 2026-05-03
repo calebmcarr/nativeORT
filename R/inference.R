@@ -6,7 +6,7 @@
 #' @returns ORT output
 #' @export
 #'
-#' @examples ort_infer_raw(session, input)
+#' @examples \dontrun{ort_infer_raw(session, input)}
 ort_infer_raw <- function(session, input){
   ort_run(
     session_ptr = session$ptr,

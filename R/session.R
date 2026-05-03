@@ -2,11 +2,15 @@
 #'
 #' @param path where the .onnx is located
 #' @param type detection/classificaton/segmentation
+#' @param provider cpu or coreml (only for apple silicon)
+#' @param cache_dir where coreml cache be directed
+#' @param threads =  0 for all, integer otherwise
+#' @param opt_level = 99 for all ops, 1 for basics
 #'
 #' @returns ORT session object
 #' @export
 #'
-#' @examples ort_session('./yolov8n.onnx', 'detection')
+#' @examples \dontrun{ort_session('./yolov8n.onnx', 'detection')}
 ort_session <- function(path,
                         type='detection',
                         provider="cpu",
@@ -35,7 +39,7 @@ ort_session <- function(path,
   sess <- ort_create_session(env_ptr=env,
                              model_path=normalizePath(path),
                              provider=provider,
-                             cache=cache,
+                             cache_dir=cache,
                              threads=as.integer(threads),
                              opt_level=as.integer(opt_level)
           )
@@ -58,7 +62,16 @@ ort_session <- function(path,
   )
 }
 
+
+#' print.ort_session
+#'
+#' @param x session object
+#' @param ... extra params
+#'
+#' @returns invisible session
 #' @export
+#'
+#' @examples \dontrun{print(session)}
 print.ort_session <- function(x, ...) {
   cat("nativeORT session\n")
   cat("  model: ", x$path, "\n")
