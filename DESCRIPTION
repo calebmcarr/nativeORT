@@ -24,3 +24,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/calebmcarr/nativeORT
+BugReports: https://github.com/calebmcarr/nativeORT/issues
