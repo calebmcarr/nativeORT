@@ -16,7 +16,7 @@ ort_session(
 \arguments{
 \item{path}{where the .onnx is located}
 
-\item{type}{detection/classificaton/segmentation}
+\item{type}{detection/classification/segmentation}
 
 \item{provider}{cpu or coreml (only for apple silicon)}
 

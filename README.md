@@ -10,7 +10,7 @@ nativeORT is the only R-native ONNX inference engine with no Python/reticulate d
 Built on direct C++ bindings to the onnxruntime C API, inference runs entirely within R.
 
 nativeORT can run at real-time speeds, and Apple Silicon users can access the CoreML Execution
-Provider. To the author's best research, this is the first R package with direct CoreML acccess
+Provider. To the author's best research, this is the first R package with direct CoreML access
 which does not rely on reticulate or python bridging.
 
 ---
@@ -21,7 +21,7 @@ The existing R interface for ONNX Runtime routes through Python/reticulate with 
 backends in Python. Bridging, non-R dependencies, and a large footprint make this a non-ideal
 solution. As of publication, the existing packaging has not been had a new release
 since 2021. Additionally, the onnx-tensorflow dependency has not been actively maintained.
-nativeORT exists to bridge this gap for AIML practictioners in R who want a modern,
+nativeORT exists to bridge this gap for AIML practitionersin R who want a modern,
 R-native approach that runs fast without a large number of dependencies.
 
 <p align="center">
