@@ -11,6 +11,7 @@ Authors@R: c(
   )
 Description: Native R ONNX Runtime library with no reticulate/Python dependencies.
 License: MIT + file LICENSE
+Language: en-US
 Encoding: UTF-8
 LazyData: true
 LinkingTo: 
