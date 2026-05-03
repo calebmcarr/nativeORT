@@ -1,0 +1,26 @@
+Package: nativeORT
+Type: Package
+Title: Native R ONNX Runtime
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Caleb", "Carr",
+      email = "calebmcarr1@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: Native R ONNX Runtime library with no reticulate/Python dependencies.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp,
+    digest
+Config/roxygen2/version: 8.0.0
+SystemRequirements: libonnxruntie (>=1.20)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

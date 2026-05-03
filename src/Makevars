@@ -1,0 +1,8 @@
+empty :=
+space := $(empty) $(empty)
+
+ORT_DIR = $(shell Rscript --vanilla -e "cat(tools::R_user_dir('nativeORT', which='data'))")
+ORT_DIR_ESC = $(subst $(space),\ ,$(ORT_DIR))
+
+PKG_CXXFLAGS = -I$(ORT_DIR_ESC)/include
+PKG_LIBS = -L$(ORT_DIR_ESC)/lib -lonnxruntime -Wl,-rpath,$(ORT_DIR_ESC)/lib
