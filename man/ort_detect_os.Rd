@@ -13,5 +13,5 @@ str - platform
 ort_detect_os
 }
 \examples{
-ort_detect_os()
+\dontrun{ort_detect_os()}
 }

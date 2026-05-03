@@ -13,5 +13,5 @@ invisible where it was saved to
 ort_install
 }
 \examples{
-ort_install()
+\dontrun{ort_install()}
 }

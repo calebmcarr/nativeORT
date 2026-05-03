@@ -1,6 +1,6 @@
-# nativeORT 0.1.0
+# nativeORT 0.1.1
 
-* Initial CRAN release
+* Added Linux & Windows Support
 * Native ONNX Runtime inference via Rcpp bindings to the ORT C API
 * CPU and CoreML execution providers (for Apple Silicion users)
 * `ort_install()` for automatic ORT binary download and setup

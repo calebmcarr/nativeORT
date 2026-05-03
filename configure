@@ -24,11 +24,16 @@ else
     "cat(tools::R_user_dir('nativeORT', which='data'))" \
     2>/dev/null)
 
-  if [ -n "$ORT_DATA" ] && [ -f "${ORT_DATA}/lib/libonnxruntime.dylib" ]; then
-    ORT_CFLAGS="-I\"${ORT_DATA}/include\""
-    ORT_LIBS="-L\"${ORT_DATA}/lib\" -lonnxruntime -Wl,-rpath,\"${ORT_DATA}/lib\""
-    ORT_FOUND=1
-    echo "  Found ORT in user cache: $ORT_DATA"
+  # handle multi-platform options
+  if [ -n "$ORT_DATA" ]; then
+    if [ -f "${ORT_DATA}/lib/libonnxruntime.dylib" ] || \
+       [ -f "${ORT_DATA}/lib/libonnxruntime.so" ] || \
+       [ -f "${ORT_DATA}/lib/onnxruntime.dll" ]; then
+      ORT_CFLAGS="-I\"${ORT_DATA}/include\""
+      ORT_LIBS="-L\"${ORT_DATA}/lib\" -lonnxruntime -Wl,-rpath,\"${ORT_DATA}/lib\""
+      ORT_FOUND=1
+      echo "  Found ORT in user cache: $ORT_DATA"
+    fi
   fi
 fi
 

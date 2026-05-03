@@ -13,5 +13,5 @@ where the install lives
 ort_install_dir
 }
 \examples{
-ort_install_dir()
+\dontrun{ort_install_dir()}
 }
