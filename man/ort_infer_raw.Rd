@@ -18,5 +18,5 @@ ORT output
 ort_infer_raw
 }
 \examples{
-ort_infer_raw(session, input)
+\dontrun{ort_infer_raw(session, input)}
 }

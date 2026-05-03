@@ -17,6 +17,14 @@ ort_session(
 \item{path}{where the .onnx is located}
 
 \item{type}{detection/classificaton/segmentation}
+
+\item{provider}{cpu or coreml (only for apple silicon)}
+
+\item{cache_dir}{where coreml cache be directed}
+
+\item{threads}{=  0 for all, integer otherwise}
+
+\item{opt_level}{= 99 for all ops, 1 for basics}
 }
 \value{
 ORT session object
@@ -25,5 +33,5 @@ ORT session object
 session.R
 }
 \examples{
-ort_session('./yolov8n.onnx', 'detection')
+\dontrun{ort_session('./yolov8n.onnx', 'detection')}
 }

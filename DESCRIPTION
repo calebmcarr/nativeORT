@@ -17,10 +17,12 @@ LinkingTo:
     Rcpp
 Imports: 
     Rcpp,
-    digest
+    digest,
+    glue
 Config/roxygen2/version: 8.0.0
 SystemRequirements: libonnxruntie (>=1.20)
 Suggests: 
+    ggplot2,
     knitr,
     rmarkdown
 VignetteBuilder: knitr

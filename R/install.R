@@ -10,6 +10,7 @@
 #' ort_detect_os
 #'
 #' @returns str - platform
+#' @export
 #'
 #' @examples ort_detect_os()
 ort_detect_os <- function(){
@@ -24,21 +25,49 @@ ort_detect_os <- function(){
   }
 }
 
+#' ort_install_dir
+#'
+#' @returns where the install lives
+#' @export
+#'
+#' @examples ort_install_dir()
 ort_install_dir <- function(){
   tools::R_user_dir("nativeORT", which="data")
 }
 
+#' ort_binary_url
+#'
+#' @returns string where to download onnxruntime from
+#' @export
+#'
+#' @examples ort_binary_url()
 ort_binary_url <- function(){
   os <- ort_detect_os()
   base <- "https://github.com/microsoft/onnxruntime/releases/download"
   glue::glue("{base}/v{.ort_version}/onnxruntime-{os}-{.ort_version}.tgz")
 }
 
+#' ort_is_installed
+#'
+#' @returns boolean for if you have onnx runtime or not
+#' @export
+#'
+#' @examples ort_is_installed()
 ort_is_installed <- function(){
   lib <- file.path(ort_install_dir(), "lib", "libonnxruntime.dylib")
   file.exists(lib)
 }
 
+#' ort_codesign
+#'
+#' for macs, signs the downloaded binaries
+#'
+#' @param lib_dir where the libraries are
+#'
+#' @returns invisible lib path
+#' @export
+#'
+#' @examples ort_codesign(file.path(ort_install_dir(), "lib"))
 ort_codesign <- function(lib_dir) {
   dylibs <- list.files(
     lib_dir,
@@ -59,6 +88,15 @@ ort_codesign <- function(lib_dir) {
   invisible(lib_dir)
 }
 
+#' ort_download
+#'
+#' @param url where to download from
+#' @param dest_dir where to download to
+#'
+#' @returns invisible dest_dir
+#' @export
+#'
+#' @examples \dontrun{ort_download(ort_binary_url(), ort_install_dir())}
 ort_download <- function(url, dest_dir) {
   # download
   dir.create(dest_dir, recursive = TRUE, showWarnings= FALSE)
@@ -91,6 +129,12 @@ ort_download <- function(url, dest_dir) {
   invisible(dest_dir)
 }
 
+#' ort_install
+#'
+#' @returns invisible where it was saved to
+#' @export
+#'
+#' @examples ort_install()
 ort_install <- function() {
   # prevent re-installation
   if (ort_is_installed()) {
