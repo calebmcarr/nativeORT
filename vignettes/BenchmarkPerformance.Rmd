@@ -94,7 +94,8 @@ ggplot(results, aes(x=run, y=latency_ms, color=provider)) +
     subtitle="YOLOv11n, 256x256 Images, Apple M1",
     x="Run",
     y="Latency (ms)"
-  )
+  ) +
+  theme_minimal()
 ```
 
 ## Results
