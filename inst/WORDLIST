@@ -6,6 +6,7 @@ Github
 Inferencing
 Nota
 ONNX
+onnx
 ORT
 README
 Tensorflow
@@ -27,3 +28,4 @@ reticulate
 str
 tensorflow
 ultralytics
+
