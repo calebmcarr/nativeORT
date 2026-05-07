@@ -13,5 +13,5 @@ boolean for if you have onnx runtime or not
 ort_is_installed
 }
 \examples{
-\dontrun{ort_is_installed()}
+ort_is_installed()
 }

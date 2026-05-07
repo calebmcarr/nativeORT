@@ -1,7 +1,7 @@
 Package: nativeORT
 Type: Package
-Title: Native R ONNX Runtime
-Version: 0.1.1
+Title: Native 'R' 'ONNX' Runtime
+Version: 0.1.2
 Authors@R: c(
     person(
       "Caleb", "Carr",
@@ -9,7 +9,12 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Native R ONNX Runtime library with no reticulate/Python dependencies.
+Description: Provides 'R' native 'ONNX' model inference without requiring 'Python', 'reticulate'
+  bindings, or 'TensorFlow'. This package directly binds the 'ONNX Runtime' C API via 'Rcpp', enabling
+  real-time inference for '.onnx' engines, all within 'R'. Standard CPU execution is supported as well 
+  as the 'CoreML' Execution Provider (CEP) for Apple Silicon, all without external bindings. This package
+  handles OS detection, linking 'ONNX' libraries, and inference. For more information about 'ONNX Runtime'
+  see <https://onnxruntime.ai/>.
 License: MIT + file LICENSE
 Language: en-US
 Encoding: UTF-8
@@ -21,7 +26,7 @@ Imports:
     digest,
     glue
 Config/roxygen2/version: 8.0.0
-SystemRequirements: libonnxruntie (>=1.20)
+SystemRequirements: libonnxruntime (>= 1.20)
 Suggests: 
     ggplot2,
     knitr,

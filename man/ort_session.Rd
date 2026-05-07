@@ -33,5 +33,9 @@ ORT session object
 session.R
 }
 \examples{
-\dontrun{ort_session('./yolov8n.onnx', 'detection')}
+\donttest{
+  if (file.exists('./yolov11n.onnx')) {
+    ort_session('./yolov11n.onnx', 'detection')
+  }
+}
 }

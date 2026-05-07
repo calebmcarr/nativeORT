@@ -16,5 +16,9 @@ invisible lib path
 for macs, signs the downloaded binaries
 }
 \examples{
-\dontrun{ort_codesign(file.path(ort_install_dir(), "lib"))}
+\donttest{
+  if(!ort_is_installed()){
+    ort_codesign(file.path(ort_install_dir(), "lib"))
+  }
+}
 }

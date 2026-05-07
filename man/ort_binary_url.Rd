@@ -13,5 +13,5 @@ string where to download onnxruntime from
 ort_binary_url
 }
 \examples{
-\dontrun{ort_binary_url()}
+ort_binary_url()
 }

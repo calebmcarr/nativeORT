@@ -13,5 +13,8 @@ invisible where it was saved to
 ort_install
 }
 \examples{
-\dontrun{ort_install()}
+\donttest{
+  if(!ort_is_installed()){
+    ort_install()}
+  }
 }

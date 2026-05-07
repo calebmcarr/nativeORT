@@ -3,7 +3,7 @@
     packageStartupMessage(
       "nativeORT: ONNX Runtime not found.\n",
       "  Run ort_install() to download it \n.",
-      "  Then re-install nativeoRT to enable inference."
+      "  Then re-install nativeORT to enable inference."
     )
   }
 }
