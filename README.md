@@ -1,6 +1,6 @@
 # nativeORT
 
-Awaiting CRAN approval*
+[![CRAN status](https://www.r-pkg.org/badges/version/nativeORT)](https://CRAN.R-project.org/package=nativeORT)
 
 ---
 
@@ -19,9 +19,9 @@ which does not rely on reticulate or python bridging.
 
 The existing R interface for ONNX Runtime routes through Python/reticulate with Tensorflow
 backends in Python. Bridging, non-R dependencies, and a large footprint make this a non-ideal
-solution. As of publication, the existing packaging has not been had a new release
+solution. As of publication, the existing packaging has not had a new release
 since 2021. Additionally, the onnx-tensorflow dependency has not been actively maintained.
-nativeORT exists to bridge this gap for AIML practitionersin R who want a modern,
+nativeORT exists to bridge this gap for AIML practitioners in R who want a modern,
 R-native approach that runs fast without a large number of dependencies.
 
 <p align="center">
@@ -30,7 +30,13 @@ R-native approach that runs fast without a large number of dependencies.
 
 ## Installation
 
-Install from Github, within R
+Now available through CRAN!
+
+```
+install.packages('nativeORT')
+```
+
+Or, if you prefer the latest release from Github:
 
 ```r
 remotes::install_github("github.com/calebmcarr/nativeort")
@@ -42,6 +48,7 @@ the correct ORT 1.25.1 binary and verify the install. On first install:
 ```r
 library(nativeORT)
 ort_install()
+library(nativeORT) # again, with ONNX libraries registered
 ```
 
 After this, you can start inferencing on .onnx engines!
