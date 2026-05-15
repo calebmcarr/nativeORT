@@ -119,11 +119,11 @@ SEXP ort_create_session(SEXP env_ptr,
   Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
 }
 
-SEXP ort_session_input_count(SEXP session_ptr) {
+int ort_session_input_count(SEXP session_ptr) {
   Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
 }
 
-SEXP ort_session_output_count(SEXP session_ptr) {
+int ort_session_output_count(SEXP session_ptr) {
   Rcpp::stop("ORT not installed. Run ort_install() then reinstall nativeORT.");
 }
 
